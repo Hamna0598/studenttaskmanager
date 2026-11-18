@@ -44,6 +44,8 @@ def complete_task():
                 print("This task is already completed.")
                 return
 
+            print("Updating task status...")
+
             task["completed"] = True
             print("Task completed successfully!")
             return
