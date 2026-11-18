@@ -39,4 +39,4 @@ Select an option from the application menu:
 This project is licensed under the MIT License.
 
 ## Project Status
-Project status: Planning
+Project status: Testing
