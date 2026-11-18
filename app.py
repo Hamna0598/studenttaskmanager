@@ -14,7 +14,12 @@ def display_tasks():
 
 
 def add_task():
-    title = input("Enter task title: ")
+    title = input("Enter task title: ").strip()
+    print("Validating task title...")
+
+    if not title:
+        print("Error: Task title cannot be empty. Please enter a valid title.")
+        return
 
     task = {
         "id": len(tasks) + 1,
