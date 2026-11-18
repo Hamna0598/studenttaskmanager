@@ -34,6 +34,9 @@ def add_task():
 def complete_task():
     display_tasks()
 
+def complete_task():
+    display_tasks()
+    
     if not tasks:
         return
 
@@ -50,7 +53,6 @@ def complete_task():
                 return
 
             print("Updating task status...")
-
             task["completed"] = True
             print("Task completed successfully!")
             return
