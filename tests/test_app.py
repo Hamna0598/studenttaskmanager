@@ -44,7 +44,7 @@ class TestStudentTaskManager(unittest.TestCase):
 
         app.delete_task()
 
-        self.assertEqual(len(app.tasks), 2)
+        self.assertEqual(len(app.tasks), 1)
 
 
 if __name__ == "__main__":
