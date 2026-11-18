@@ -54,9 +54,16 @@ def delete_task():
 
     for task in tasks:
         if task["id"] == task_id:
+            confirmation = input(
+                f"Are you sure you want to delete '{task['title']}'? (y/n): "
+                ).strip().lower()
+
+        if confirmation == "y":
             tasks.remove(task)
             print("Task deleted successfully!")
-            return
+        else:
+            print("Task deletion cancelled.")
+        return
 
     print("Task not found.")
 
