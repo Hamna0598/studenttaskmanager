@@ -37,3 +37,6 @@ Select an option from the application menu:
 
 ## License
 This project is licensed under the MIT License.
+
+## Project Status
+Project status: Planning
