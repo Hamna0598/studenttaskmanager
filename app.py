@@ -34,10 +34,23 @@ def add_task():
 def complete_task():
     display_tasks()
 
-    task_id = int(input("\nEnter task ID to complete: "))
+    if not tasks:
+        return
+
+    try:
+        task_id = int(input("\nEnter task ID to complete: "))
+    except ValueError:
+        print("Error: Please enter a valid numeric task ID.")
+        return
 
     for task in tasks:
         if task["id"] == task_id:
+            if task["completed"]:
+                print("This task is already completed.")
+                return
+
+            print("Updating task status...")
+
             task["completed"] = True
             print("Task completed successfully!")
             return
