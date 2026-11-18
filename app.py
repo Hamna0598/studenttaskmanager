@@ -43,7 +43,14 @@ def complete_task():
 def delete_task():
     display_tasks()
 
-    task_id = int(input("\nEnter task ID to delete: "))
+    if not tasks:
+        return
+
+    try:
+        task_id = int(input("\nEnter task ID to delete: "))
+    except ValueError:
+        print("Error: Please enter a valid numeric task ID.")
+        return
 
     for task in tasks:
         if task["id"] == task_id:
