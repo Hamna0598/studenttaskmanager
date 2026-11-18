@@ -61,13 +61,27 @@ def complete_task():
 def delete_task():
     display_tasks()
 
-    task_id = int(input("\nEnter task ID to delete: "))
+    if not tasks:
+        return
+
+    try:
+        task_id = int(input("\nEnter task ID to delete: "))
+    except ValueError:
+        print("Error: Please enter a valid numeric task ID.")
+        return
 
     for task in tasks:
         if task["id"] == task_id:
+            confirmation = input(
+                f"Are you sure you want to delete '{task['title']}'? (y/n): "
+                ).strip().lower()
+
+        if confirmation == "y":
             tasks.remove(task)
             print("Task deleted successfully!")
-            return
+        else:
+            print("Task deletion cancelled.")
+        return
 
     print("Task not found.")
 
